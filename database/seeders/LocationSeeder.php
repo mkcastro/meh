@@ -17,21 +17,22 @@ class LocationSeeder extends Seeder
 
         $rows = array_map('str_getcsv', explode("\n", $csv));
 
+        $data = [];
+
         foreach ($rows as $row) {
             if (count($row) !== 3) {
                 continue;
             }
 
-            Location::firstOrCreate(
-                [
+            $data[] = [
+                'name' => $row[0],
+                'latitude' => $row[1],
+                'longitude' => $row[2],
+            ];
+        }
 
-                    'name' => $row[0],
-                ],
-                [
-                    'latitude' => $row[1],
-                    'longitude' => $row[2],
-                ]
-            );
+        if (!empty($data)) {
+            Location::insert($data);
         }
     }
 }
