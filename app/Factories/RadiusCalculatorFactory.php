@@ -2,6 +2,7 @@
 
 namespace App\Factories;
 
+use App\Enums\LengthUnits;
 use App\Interfaces\GetLocationsWithinRadiusInterface;
 use App\Services\KilometerRadiusCalculator;
 use App\Services\LocationsWithinKmRadius;
@@ -13,9 +14,9 @@ class GetLocationsFactoryCalculator
     public static function createCalculator(string $unit): GetLocationsWithinRadiusInterface
     {
         switch ($unit) {
-            case 'km':
+            case LengthUnits::KILOMETER->value:
                 return new LocationsWithinKmRadius();
-            case 'miles':
+            case LengthUnits::MILE->value:
                 return new LocationsWithinMileRadius();
             default:
                 throw new InvalidArgumentException("Unsupported radius unit: $unit");
