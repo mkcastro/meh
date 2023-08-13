@@ -31,7 +31,7 @@ class LocationSeeder extends Seeder
             ];
         }
 
-        if (!empty($data)) {
+        if (! empty($data)) {
             Location::insert($data);
         }
     }
