@@ -5,6 +5,8 @@ namespace App\Factories;
 use App\Enums\LengthUnits;
 use App\Interfaces\GetLocationsWithinRadiusInterface;
 use App\Services\LocationsWithinKmRadius;
+use App\Services\LocationsWithinMileRadius;
+use InvalidArgumentException;
 
 class GetLocationsFactoryCalculator
 {
