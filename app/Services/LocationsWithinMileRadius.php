@@ -5,7 +5,7 @@ namespace App\Services;
 use App\Interfaces\GetLocationsWithinRadiusInterface;
 use App\Models\Location;
 
-class MileRadiusCalculator implements GetLocationsWithinRadiusInterface
+class LocationsWithinMileRadius implements GetLocationsWithinRadiusInterface
 {
     public function getLocations(float $radius, float $latitude, float $longitude): array
     {
