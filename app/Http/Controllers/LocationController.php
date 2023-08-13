@@ -24,7 +24,7 @@ class LocationController extends Controller
         // Use the factory to create the appropriate calculator
         $calculator = GetLocationsFactoryCalculator::createCalculator($unit);
 
-        $locations = $calculator->calculateRadius($radius, $latitude, $longitude);
+        $locations = $calculator->getLocations($radius, $latitude, $longitude);
 
         // Transform the locations using the resource
         $transformedLocations = LocationResource::collection($locations);
