@@ -27,7 +27,7 @@ class IndexLocationRequest extends FormRequest
             'latitude' => 'required|numeric',
             'longitude' => 'required|numeric',
             'radius' => 'required|numeric',
-            'unit' => ['required', Rule::in([LengthUnits::KILOMETERS->value, LengthUnits::MILES->value])],
+            'unit' => ['required', Rule::in([LengthUnits::KILOMETER->value, LengthUnits::MILE->value])],
         ];
     }
 
