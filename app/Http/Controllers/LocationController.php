@@ -8,6 +8,7 @@ use App\Http\Requests\StoreLocationRequest;
 use App\Http\Requests\UpdateLocationRequest;
 use App\Http\Resources\LocationResource;
 use App\Models\Location;
+use App\Services\LocationsWithinKmRadius;
 
 class LocationController extends Controller
 {
@@ -22,7 +23,8 @@ class LocationController extends Controller
         $unit = $request->getUnit();
 
         // Use the factory to create the appropriate calculator
-        $calculator = GetLocationsFactoryCalculator::createCalculator($unit);
+        // $calculator = GetLocationsFactoryCalculator::createCalculator($unit);
+        $calculator = new LocationsWithinKmRadius();
 
         $locations = $calculator->getLocations($radius, $latitude, $longitude);
 
