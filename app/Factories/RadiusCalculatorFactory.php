@@ -4,10 +4,7 @@ namespace App\Factories;
 
 use App\Enums\LengthUnits;
 use App\Interfaces\GetLocationsWithinRadiusInterface;
-use App\Services\KilometerRadiusCalculator;
 use App\Services\LocationsWithinKmRadius;
-use App\Services\MileRadiusCalculator;
-use App\Services\OtherUnitRadiusCalculator;
 
 class GetLocationsFactoryCalculator
 {
