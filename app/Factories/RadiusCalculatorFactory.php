@@ -6,7 +6,7 @@ use App\Services\KilometerRadiusCalculator;
 use App\Services\MileRadiusCalculator;
 use App\Services\OtherUnitRadiusCalculator;
 
-class RadiusCalculatorFactory
+class GetLocationsFactoryCalculator
 {
     public static function createCalculator(string $unit): InterfacesRadiusCalculatorInterface
     {

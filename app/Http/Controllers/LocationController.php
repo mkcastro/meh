@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Factories\RadiusCalculatorFactory;
+use App\Factories\GetLocationsFactoryCalculator;
 use App\Http\Requests\IndexLocationRequest;
 use App\Http\Requests\StoreLocationRequest;
 use App\Http\Requests\UpdateLocationRequest;
@@ -22,7 +22,7 @@ class LocationController extends Controller
         $unit = $request->getUnit();
 
         // Use the factory to create the appropriate calculator
-        $calculator = RadiusCalculatorFactory::createCalculator($unit);
+        $calculator = GetLocationsFactoryCalculator::createCalculator($unit);
 
         $locations = $calculator->calculateRadius($radius, $latitude, $longitude);
 
