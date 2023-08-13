@@ -4,10 +4,11 @@ namespace App\Services;
 
 use App\Interfaces\GetLocationsWithinRadiusInterface;
 use App\Models\Location;
+use Illuminate\Database\Eloquent\Collection;
 
 class LocationsWithinKmRadius implements GetLocationsWithinRadiusInterface
 {
-    public function getLocations(float $radius, float $latitude, float $longitude): array
+    public function getLocations(float $radius, float $latitude, float $longitude): Collection
     {
         // Fetch locations from the database within the given radius
         $locations = Location::select('id', 'name', 'latitude', 'longitude')
