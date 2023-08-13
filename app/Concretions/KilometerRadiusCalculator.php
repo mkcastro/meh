@@ -7,7 +7,7 @@ use App\Models\Location;
 
 class LocationsWithinKmRadius implements GetLocationsWithinRadiusInterface
 {
-    public function getLocationsWithinRadius(float $radius, float $latitude, float $longitude): array
+    public function getLocations(float $radius, float $latitude, float $longitude): array
     {
         // Fetch locations from the database within the given radius
         $locations = Location::select('id', 'name', 'latitude', 'longitude')

@@ -4,5 +4,5 @@ namespace App\Interfaces;
 
 interface GetLocationsWithinRadiusInterface
 {
-    public function getLocationsWithinRadius(float $radius, float $latitude, float $longitude): array;
+    public function getLocations(float $radius, float $latitude, float $longitude): array;
 }
