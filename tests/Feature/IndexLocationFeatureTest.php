@@ -53,9 +53,11 @@ class IndexLocationFeatureTest extends TestCase
         $response->assertJsonCount(1, 'data');
 
         // Additional assertions based on your requirements
+        // assert that the first row has the expected name, latitude and longitude
+        $response->assertJsonFragment([
+            'name' => 'Toyota Taunton',
+            'latitude' => '51.475603934275675',
+            'longitude' => '-2.3807167145198114',
+        ]);
     }
 }
-
-// tests/Feature/LocationTest.php
-
-namespace Tests\Feature;
