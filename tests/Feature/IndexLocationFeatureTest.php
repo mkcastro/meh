@@ -11,7 +11,6 @@ class IndexLocationFeatureTest extends TestCase
 
     public $seed = true;
 
-
     /**
      * A basic feature test example.
      */
@@ -23,9 +22,9 @@ class IndexLocationFeatureTest extends TestCase
 
         // Define parameters for the request
         $parameters = [
-            'latitude' => 34.0522,
-            'longitude' => -118.2437,
-            'radius' => 10,
+            'latitude' => 51.475603934275675,
+            'longitude' => -2.3807167145198114,
+            'radius' => 1,
             'unit' => 'km',
         ];
 
@@ -51,7 +50,7 @@ class IndexLocationFeatureTest extends TestCase
         ]);
 
         // You can also assert the number of returned locations
-        // $response->assertJsonCount(5, 'data');
+        $response->assertJsonCount(1, 'data');
 
         // Additional assertions based on your requirements
     }
