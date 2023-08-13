@@ -4,6 +4,6 @@ namespace App\Enums;
 
 enum LengthUnits: string
 {
-    case KILOMETERS = 'km';
-    case MILES = 'miles';
+    case KILOMETER = 'km';
+    case MILE = 'mile';
 }
