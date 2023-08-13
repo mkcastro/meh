@@ -9,6 +9,9 @@ class IndexLocationFeatureTest extends TestCase
 {
     use RefreshDatabase;
 
+    public $seed = true;
+
+
     /**
      * A basic feature test example.
      */
@@ -34,7 +37,18 @@ class IndexLocationFeatureTest extends TestCase
 
         // Assert the response structure or specific data if needed
         // For example, you can assert the JSON structure or key presence
-        // $response->assertJsonStructure([...]);
+        $response->assertJsonStructure([
+            'data' => [
+                '*' => [
+                    'id',
+                    'name',
+                    'latitude',
+                    'longitude',
+                    'created_at',
+                    'updated_at',
+                ],
+            ],
+        ]);
 
         // You can also assert the number of returned locations
         // $response->assertJsonCount(5, 'data');
